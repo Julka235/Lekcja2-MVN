@@ -6,7 +6,27 @@ import org.junit.jupiter.api.Test;
 class DayOfTheWeekTest {
 
     @Test
-    void shouldReturnDayOfTheWeekForNumber3() {
+    void shouldReturnMonday() {
+        // given
+        int number = 1;
+        // when
+        String day = DayOfTheWeek.returnDayOfTheWeek(number);
+        // then
+        Assertions.assertArrayEquals("Monday".toCharArray(), day.toCharArray());
+    }
+
+    @Test
+    void shouldReturnTuesday() {
+        // given
+        int number = 2;
+        // when
+        String day = DayOfTheWeek.returnDayOfTheWeek(number);
+        // then
+        Assertions.assertArrayEquals("Tuesday".toCharArray(), day.toCharArray());
+    }
+
+    @Test
+    void shouldReturnWednesday() {
         // given
         int number = 3;
         // when
@@ -16,7 +36,27 @@ class DayOfTheWeekTest {
     }
 
     @Test
-    void shouldReturnDayOfTheWeekForNumber6() {
+    void shouldReturnThursday() {
+        // given
+        int number = 4;
+        // when
+        String day = DayOfTheWeek.returnDayOfTheWeek(number);
+        // then
+        Assertions.assertArrayEquals("Thursday".toCharArray(), day.toCharArray());
+    }
+
+    @Test
+    void shouldReturnFriday() {
+        // given
+        int number = 5;
+        // when
+        String day = DayOfTheWeek.returnDayOfTheWeek(number);
+        // then
+        Assertions.assertArrayEquals("Friday".toCharArray(), day.toCharArray());
+    }
+
+    @Test
+    void shouldReturnWeekend() {
         // given
         int number = 6;
         // when
@@ -26,7 +66,17 @@ class DayOfTheWeekTest {
     }
 
     @Test
-    void shouldReturnDayOfTheWeekForNumber0() {
+    void shouldAlsoReturnWeekend() {
+        // given
+        int number = 7;
+        // when
+        String day = DayOfTheWeek.returnDayOfTheWeek(number);
+        // then
+        Assertions.assertArrayEquals("Weekend".toCharArray(), day.toCharArray());
+    }
+
+    @Test
+    void shouldReturnThereIsNoSuchDay() {
         // given
         int number = 0;
         // when
