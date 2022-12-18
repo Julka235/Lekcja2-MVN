@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 class AgeVerificationTest {
 
     @Test
-    void shouldVerifyIsAdultAge19() {
+    void shouldReturnTrueWhenAdult() {
         // given
-        int age = 19;
+        int age = 37;
         // when
         boolean isAdult = AgeVerification.verifyAge(age);
         // then
@@ -16,9 +16,19 @@ class AgeVerificationTest {
     }
 
     @Test
-    void shouldVerifyIsAdultAge16() {
+    void shouldReturnTrueWhenRecentlyBecameAnAdult() {
         // given
-        int age = 16;
+        int age = 18;
+        // when
+        boolean isAdult = AgeVerification.verifyAge(age);
+        // then
+        Assertions.assertEquals(true, isAdult);
+    }
+
+    @Test
+    void shouldReturnFalseWhenTeenager() {
+        // given
+        int age = 15;
         // when
         boolean isAdult = AgeVerification.verifyAge(age);
         // then
