@@ -5,23 +5,47 @@ import org.junit.jupiter.api.Test;
 
 class ParityVerificationTest {
 
+    // isEven function
+
     @Test
-    void shouldVerifyIf11IsEven() {
+    void shouldReturnTrueWhenEven() {
         // given
-        int number = 11;
+        int number = 12;
         // when
-        boolean isEven = ParityVerification.verifyIsEven(number);
+        boolean isEven = ParityVerification.IsEven(number);
+        // then
+        Assertions.assertEquals(true, isEven);
+    }
+
+    @Test
+    void shouldReturnFalseWhenOdd() {
+        // given
+        int number = 7;
+        // when
+        boolean isEven = ParityVerification.IsEven(number);
         // then
         Assertions.assertEquals(false, isEven);
     }
 
+    // isOdd function
+
     @Test
-    void shouldVerifyIf16IsEven() {
+    void shouldReturnTrueWhenOdd() {
         // given
-        int number = 16;
+        int number = 13;
         // when
-        boolean isEven = ParityVerification.verifyIsEven(number);
+        boolean isOdd = ParityVerification.IsOdd(number);
         // then
-        Assertions.assertEquals(true, isEven);
+        Assertions.assertEquals(true, isOdd);
+    }
+
+    @Test
+    void shouldReturnFalseWhenEven() {
+        // given
+        int number = 8;
+        // when
+        boolean isOdd = ParityVerification.IsOdd(number);
+        // then
+        Assertions.assertEquals(false, isOdd);
     }
 }
